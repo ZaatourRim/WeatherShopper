@@ -9,9 +9,7 @@ This Python script automates the shopping process on the Weather Shop website ba
   - [Installation](#installation)
   - [Running with Docker](#running-with-docker)
   - [Running without Docker](#running-without-docker)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Introduction
 
