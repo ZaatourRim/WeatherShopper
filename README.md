@@ -28,7 +28,7 @@ Before you begin, ensure that you have Docker installed on your system. You can 
 1. Clone this repository or download the project files.
 
 ### running-with-docker
-  - run this command to build the Docker image everytime you change something in the code:
+  - run this command to build the Docker image and everytime you change something in the code:
 
    ```docker build -t my-weather-shopper . ```
   - run this command to run the container in Docker, my-weather-shopper is the name of the image:
