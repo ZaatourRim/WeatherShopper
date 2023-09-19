@@ -50,10 +50,13 @@ class ProductPage:
             least_expensive_product = prices[0][0]
             add_button = least_expensive_product.find_element(By.XPATH, 'following-sibling::button')
             add_button.click()
-        else:
+        elif len(product_elements) == 1:
             product = product_elements[0]
             add_button = product.find_element(By.XPATH, 'following-sibling::button')
             add_button.click()
+        else:
+            # no products were found that have the key word
+            pass
 
     def click_cart_button(self):
         self.driver.find_element(By.XPATH, "//button[@onclick='goToCart()']").click()
@@ -110,7 +113,7 @@ class ConfirmationPage:
 
             if payment_status_message.text == "PAYMENT SUCCESS":
                 print("Your payment was successful. You should receive a follow-up call from our sales team.")
-            elif payment_status_message.text == "PAYMENT FAILURE":
+            elif payment_status_message.text == "PAYMENT FAILED":
                 print("Oh, oh! Your payment did not go through. Please bang your head against a wall, curse the "
                       "software gods and then try again.")
         except Exception as e:
@@ -125,7 +128,7 @@ def main():
     # run the webdriver headless by default in Docker
     my_driver = webdriver.Firefox(firefox_options)
     # run the webdriver with GUI automation
-    # my_driver = webdriver.Firefox()
+    #my_driver = webdriver.Firefox()
     weather_shop_page = WeatherShopPage(my_driver)
 
     # Navigate to the web application
